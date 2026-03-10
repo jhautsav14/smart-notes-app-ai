@@ -1,6 +1,6 @@
 # Smart Notes App 📝✨
 
-A premium, high-performance iOS-style Notes application built with Flutter. This app features offline-first local storage, smooth pagination, real-time search, and AI-powered note summarization using the Llama 3 model via OpenRouter.
+A premium, high-performance android/iOS-style Notes application built with Flutter. This app features offline-first local storage, smooth pagination, real-time search, and AI-powered note summarization using the Llama 3 model via OpenRouter.
 
 ## 🌟 Features
 
