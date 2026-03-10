@@ -54,21 +54,26 @@ class AppConstants {
 5. Run the app
 flutter run,
 📁 Folder Structure
-lib/
-├── core/
-│   ├── constants/        # API Keys, URLs
-│   ├── network/          # AI Service / HTTP Client
-│   └── theme/            # Global App Colors & Typography
-│
-├── features/
-│   └── notes/
-│       ├── data/         # Note Model, Hive Adapters
-│       ├── presentation/
-│       │   ├── providers/ # Riverpod State Notifiers
-│       │   ├── screens/   # Home, Note Detail, Add/Edit Sheet
-│       │   └── widgets/   # Note Cards, UI Components
-│
-└── main.dart             # App Entry Point & Hive Initialization
+
+### Folder Overview
+
+- **core/**
+  - Contains global utilities used across the application.
+  - `constants/` – API keys, base URLs, and global constants.
+  - `network/` – AI service integration and HTTP client logic.
+  - `theme/` – Global theme configuration including colors and typography.
+
+- **features/notes/**
+  - Main feature module for the Notes functionality.
+  - `data/` – Note model definitions and Hive adapters for local storage.
+  - `presentation/`
+    - `providers/` – Riverpod state management logic.
+    - `screens/` – Main UI screens such as Home and Note detail.
+    - `widgets/` – Reusable UI components like Note cards.
+
+- **main.dart**
+  - Entry point of the Flutter application.
+  - Responsible for initializing Hive and launching the app.
 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome.
