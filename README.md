@@ -19,6 +19,19 @@ A premium, high-performance android/iOS-style Notes application built with Flutt
 * **Networking:** `http` package
 * **AI Engine:** [OpenRouter API](https://openrouter.ai/) (Model: `meta-llama/llama-3-8b-instruct`)
 
+
+## 🧠 Offline-First Caching Architecture
+
+
+
+The app handles data using a strict **Local-First Caching Strategy** to ensure maximum performance and minimize unnecessary API costs:
+
+1. **Single Source of Truth (Hive):** Instead of fetching from a remote server, `Hive.initFlutter()` immediately loads the local `notesBox` into memory on startup. The Riverpod state acts purely as a reactive mirror to this local database.
+2. **Instant Write-Through Caching:** All CRUD operations (Create, Read, Update, Delete) are written directly to the device's physical storage first. Once Hive confirms the write, the UI updates instantly.
+3. **Lazy AI Caching:** The app only makes an external network request when the user explicitly taps "Summarize". Once the AI returns the text, it is injected into the existing `Note` model and permanently cached in Hive. Future reads of that summary require zero network requests.
+4. **In-Memory Pagination:** To handle 1000+ notes, the Hive box is loaded into memory, but the Riverpod provider only serves them to the UI in chunks of 15 (`_pageSize`). As the user scrolls to 90% of the list, the next 15 items are seamlessly rendered.
+
+---
 ## 🚀 Getting Started
 
 ### Prerequisites
